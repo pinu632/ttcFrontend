@@ -1,0 +1,60 @@
+/* Quill specific styles */
+.ql-toolbar.ql-snow {
+    border: none !important;
+    color: white !important;
+    border-radius: 4px 4px 0 0;
+    height: fit-content;
+    min-height: 40px;
+    position: sticky;
+    z-index: 199!important;
+    background: rgb(221, 221, 222);
+    top: 0;
+}
+
+
+.ql-container.ql-snow {
+    border: none !important;
+    min-height: 300px;
+}
+
+.ql-tooltip{
+    margin-top: 2rem!important;
+}
+
+
+.ql-editor {
+ padding-top: 5rem !important;
+  
+    min-height: 300px;
+    overflow-y: scroll !important;
+    max-height: calc(100%-50px) !important;
+    color: black !important;
+    font-size: 17px !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+
+}
+
+@media screen {
+    
+}
+
+.preview-section {
+    margin-top: 1rem;
+
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: white
+}
+
+.preview-section h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.ql-snow .ql-editor img {
+    max-width: 100%;
+    max-height: 300px!important;
+    object-fit: contain;
+}
