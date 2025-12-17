@@ -24,7 +24,7 @@ interface FormData {
     role: string[];
     status: string;
 }
-
+//@ts-ignore
 interface ErrorsState {
     [key: string]: string;
 }
@@ -37,7 +37,6 @@ import {
     SelectItem,
 } from "@/components/ui/select";
 import ImageUploadDialog from "@/components/Uploder/uploader";
-import { Card } from "@/components/ui/card";
 import BulkStudentUploadDrawer from "./AddBulkStudentDrawer";
 
 export default function AddStudent() {

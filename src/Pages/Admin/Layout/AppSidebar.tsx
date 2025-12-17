@@ -12,11 +12,9 @@ import {
   PageIcon,
   PieChartIcon,
   PlugInIcon,
-  TableIcon,
   UserCircleIcon,
 } from "../../../icons";
 import { useSidebar } from "../context/SidebarContext";
-import SidebarWidget from "./SidebarWidget";
 import { useAppSelector } from "@/store/hook";
 import TechTalkTitle from "@/components/UIComponents/techTalkTitle";
 

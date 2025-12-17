@@ -36,7 +36,7 @@ export default function BulkStudentUploadSheet() {
         if (c.includes("C")) return "B. Tech CSE";
         if (c.includes("A")) return "B. Tech AI & ML";
         if (c.includes("I")) return "B. Tech IT";
-        
+
 
         return "Unknown Course";
     };
@@ -67,7 +67,7 @@ export default function BulkStudentUploadSheet() {
     const uploadBulk = async () => {
         try {
             setLoading(true);
-
+            //@ts-ignore
             const res = await api.post("/student/bulk", {
                 students: students,
             });

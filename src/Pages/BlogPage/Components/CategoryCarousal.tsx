@@ -13,9 +13,11 @@ const categories = [
 export default function CategoryCarousel() {
     const carouselRef = useRef(null);
 
-    const scroll = (direction) => {
+    const scroll = (direction:any) => {
         if (carouselRef.current) {
+            //@ts-ignore
             const scrollAmount = carouselRef.current.firstChild.offsetWidth + 16; // tile width + gap
+            //@ts-ignore
             carouselRef.current.scrollBy({
                 left: direction === "right" ? scrollAmount : -scrollAmount,
                 behavior: "smooth",

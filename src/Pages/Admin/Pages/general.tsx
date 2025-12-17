@@ -1,4 +1,4 @@
-import { Shield, Users, FileText, Settings, LogOut, Bell } from "lucide-react";
+import { Shield, Users, FileText, Settings, LogOut } from "lucide-react";
 import { useAppSelector } from "@/store/hook";
 import { Link } from "react-router-dom";
 

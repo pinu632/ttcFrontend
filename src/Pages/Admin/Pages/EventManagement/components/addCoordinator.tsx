@@ -5,7 +5,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { Command, CommandGroup, CommandItem, CommandInput } from "@/components/ui/command";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Filter, X } from "lucide-react";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import api from "@/Axios/axiosInstance";
 

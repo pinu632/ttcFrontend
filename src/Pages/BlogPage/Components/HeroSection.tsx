@@ -1,5 +1,5 @@
 import { Pen } from "lucide-react";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 // Sample top articles data

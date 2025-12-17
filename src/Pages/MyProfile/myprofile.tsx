@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, } from "react";
 import { useForm } from "react-hook-form";
 import { 
   User, Mail, Phone, BookOpen, Award, 
   Trophy, Download, Github, Share2, 
-  Settings, CheckCircle2, Pencil, Plus 
+   CheckCircle2, Pencil, Plus 
 } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -15,7 +15,6 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import api from "@/Axios/axiosInstance";
 import { useAppSelector } from "@/store/hook";
 
 export default function MyProfile() {
@@ -40,6 +39,7 @@ export default function MyProfile() {
   const form = useForm({ defaultValues: userData });
 
   const onUpdateProfile = async (data: any) => {
+    data;
     setLoading(true);
     try {
       // await api.put("/user/update", data);

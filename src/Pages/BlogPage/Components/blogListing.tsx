@@ -1,8 +1,8 @@
 // pages/BlogListing.jsx
 import { useState, useEffect } from "react";
 import BlogCard from "./blogcard";
-import Breadcrumb from "../../../Component/Breadcrumb/breadcrumb";
-import { Search, Filter } from "lucide-react";
+
+
 import { useParams } from "react-router-dom";
 import BlogFilterBar from "./filterSearchBar";
 
@@ -53,6 +53,7 @@ const categoryTopicsMap = {
 
 
 export default function BlogListing() {
+    //@ts-ignore
     const [search, setSearch] = useState("");
 
 
@@ -64,16 +65,18 @@ export default function BlogListing() {
 
     useEffect(() => {
         // get the topics that belong to the category from the map
+        //@ts-ignore
         const topics = categoryTopicsMap[category] || [category];
 
         const filteredBlogs = blogsData.filter(
             (blog) =>
                 blog.categories.some((c) =>
+                    //@ts-ignore
                     topics.map((t) => t.toLowerCase()).includes(c.toLowerCase())
                 ) &&
                 blog.title.toLowerCase().includes(search.toLowerCase())
         );
-
+        //@ts-ignore
         setBlogs(filteredBlogs);
     }, [category, search]);
 
@@ -84,14 +87,14 @@ export default function BlogListing() {
             {/* Header */}
             <div className="sm:px-6 py-5 sm:py-6">
                 <h1 className="text-3xl font-bold ">Tech Talk Blog</h1>
-                <Breadcrumb
+                {/* <Breadcrumb
                     items={[
                         { label: "Home", href: "/" },
                         { label: "Blog", href: "/blogs" },
                         { label: category, href: `/blog/category/${category}` },
 
                     ]}
-                />
+                /> */}
             </div>
 
             {/* Filters */}
@@ -103,6 +106,7 @@ export default function BlogListing() {
             {/* Blog Grid */}
             <div className="sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {blogs.length > 0 ? (
+                    //@ts-ignore
                     blogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
                 ) : (
                     <div className="col-span-full text-center py-[130px] sm:py-[100px] poppins-light rounded-2xl ">

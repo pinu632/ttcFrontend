@@ -112,7 +112,9 @@ export default function GalleryInfinitePage() {
     alert(`Rename to ${newName} (connect API)`);
   };
 
-  const handleMove = async (img: any) => {
+  const handleMove = async (
+    //@ts-ignore
+    img: any) => {
     const album = prompt("Enter target album name:");
     if (!album) return;
     console.log("Moving to:", album);

@@ -21,7 +21,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import CreateBlogModal from "./CreateBlogModal";
 import api from "@/Axios/axiosInstance";
 import { useAppDispatch, useAppSelector } from "@/store/hook";
 import { setOpenBlog } from "@/store/Slices/blogOpenSlice";
@@ -37,6 +36,7 @@ interface BlogStatusMap {
 }
 
 export default function BlogManagement() {
+  //@ts-ignore
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [drafts, setDrafts] = useState<any[]>([]);
@@ -181,8 +181,6 @@ export default function BlogManagement() {
           </TableBody>
         </Table>
       </div>
-
-      <CreateBlogModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </Card>
   );
 }

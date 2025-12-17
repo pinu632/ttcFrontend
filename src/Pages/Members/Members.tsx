@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import api from "@/Axios/axiosInstance";
-import { ChevronLeft, ChevronRight, Linkedin, Github, Twitter, Mail, Home, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Linkedin, Github, Mail, Home, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -147,7 +147,7 @@ export default function TeamPage() {
           ref={sliderRef}
           className="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
         >
-          {members.map((m, i) => (
+          {members.map((m) => (
             <div
               key={m._id}
               className="min-w-full snap-center px-6"

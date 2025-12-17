@@ -1,7 +1,6 @@
-import React from 'react'
+
 import HeroSection from './Components/HeroSection'
 import BlogFilterBar from './Components/filterSearchBar'
-import CategoryCarousel from './Components/CategoryCarousal'
 import BlogSection from './Components/blogSection'
 import LatestPosts from './Components/LatestPosts'
 

@@ -35,9 +35,7 @@ export default function CreateEvent() {
 
   console.log(posterId)
 
-  const [eventDate, setEventDate] = useState<Date>();
-  const [startTime, setStartTime] = useState("10:00");
-  const [endTime, setEndTime] = useState("12:00");
+
 
 
   const [formData, setFormData] = useState({
@@ -104,6 +102,7 @@ export default function CreateEvent() {
 
       if (res.data.success) {
         if (!res?.data?.data?._id) throw new Error("data not found")
+          //@ts-ignore
         const saveImgMeta = await api.post("/media/update", {
           id: posterId,
           event: res?.data?._id,

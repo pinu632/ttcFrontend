@@ -6,7 +6,6 @@ import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./Routes/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import AppLayout from "./Pages/Admin/Layout/AppLayout";
-import { useLocation } from "react-router-dom";
 import EventTables from "./Pages/Admin/Pages/EventManagement/EventTable";
 import UsersTables from "./Pages/Admin/Pages/userMangement/UserTable";
 import AddStudent from "./Pages/Admin/Pages/userMangement/AddUser";
@@ -30,7 +29,6 @@ import MyProfile from "./Pages/MyProfile/myprofile";
 
 function App() {
 
-  const location = useLocation();
   return (
     <>
       <ToastContainer

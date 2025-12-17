@@ -1,7 +1,7 @@
 // components/BlogCard.jsx
 import { Heart } from "lucide-react";
 
-export default function BlogCard({ blog }) {
+export default function BlogCard({ blog }:any) {
   return (
     <div className="bg-white shadow sm:shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition cursor-pointer">
       {/* Image with badge */}

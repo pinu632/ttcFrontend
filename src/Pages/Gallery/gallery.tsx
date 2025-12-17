@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
 import api from "@/Axios/axiosInstance";
-import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function GalleryPage() {

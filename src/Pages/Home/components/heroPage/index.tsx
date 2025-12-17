@@ -3,7 +3,7 @@
 import { GradientLetters } from "@/components/GradientLetter";
 import { Button } from "@/components/ui/button";
 import { Redirect } from "@/Utils/RedirectionFunc";
-import { ArrowRight, Compass, Play } from "lucide-react";
+import {  Compass, Play } from "lucide-react";
 
 export default function Hero() {
   return (
