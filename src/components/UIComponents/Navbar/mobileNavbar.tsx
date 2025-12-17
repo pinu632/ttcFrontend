@@ -91,21 +91,7 @@ export default function MobileMenu({
       </nav>
 
       {/* Auth */}
-      <div className="px-6 pb-4">
-        {!user ? (
-          <Button
-            className="w-full h-11 text-base"
-            onClick={() => {
-              onClose();
-              onLogin();
-            }}
-          >
-            Log In
-          </Button>
-        ) : (
-          <UserProfileMenu />
-        )}
-      </div>
+    
 
       {/* Footer */}
       <div className="pb-4 text-center text-sm text-muted-foreground">
