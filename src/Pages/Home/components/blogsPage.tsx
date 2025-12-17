@@ -48,7 +48,7 @@ export default function PopularBlogs() {
   }, []);
 
   return (
-    <section className="w-full py-24 bg-background">
+    <section className="w-full sm:py-24 bg-background">
       <div className="container max-w-6xl mx-auto px-4">
         
         {/* Header Section */}
