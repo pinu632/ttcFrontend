@@ -16,11 +16,15 @@ import { ModeToggle } from "@/components/ModeProvider/toggleMode";
 import LoginDialog from "@/Pages/LogInModal/login";
 import { useAppSelector } from "@/store/hook";
 import { UserProfileMenu } from "../userPorfileAndDropdown/userProfile";
+import { Menu } from "lucide-react";
+import MobileMenu from "./mobileNavbar";
 
 export function TechTalkNavbar() {
   const [loginOpen, setLoginOpen] = useState(false);
   const user = useAppSelector(s => s.auth.user)
- const isAdmin: boolean = user?.role?.some((r: string) => r === 'Admin') ?? false;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const isAdmin: boolean = user?.role?.some((r: string) => r === 'Admin') ?? false;
 
   console.log(user)
   return (
@@ -135,9 +139,26 @@ export function TechTalkNavbar() {
           {user ? <UserProfileMenu /> : <Button onClick={() => setLoginOpen(true)} size="lg" variant={"outline"}>
             Log In
           </Button>}
+          <div className="sm:hidden">
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => setMobileOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
+          </div>
         </div>
       </div>
       <LoginDialog open={loginOpen} setOpen={setLoginOpen} />
+      <MobileMenu
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        isAdmin={isAdmin}
+        user={user}
+        onLogin={() => setLoginOpen(true)}
+      />
+
     </div>
   );
 }
