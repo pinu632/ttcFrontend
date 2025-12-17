@@ -2,7 +2,7 @@ import axios, { AxiosError,type InternalAxiosRequestConfig } from "axios";
 import {toast} from "react-toastify";
 
 // const API_BASE_URL = "http://localhost:5000/api/v1";
-const API_BASE_URL = "http://ec2-15-207-116-19.ap-south-1.compute.amazonaws.com/api/v1"
+const API_BASE_URL = "https://15-207-116-19.nip.io/api/v1"
 
 const REFRESH_TOKEN_URL = `${API_BASE_URL}/auth/refresh-token`;
 
