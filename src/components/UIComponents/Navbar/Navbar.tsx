@@ -145,7 +145,7 @@ export function TechTalkNavbar() {
               variant="ghost"
               onClick={() => setMobileOpen(true)}
             >
-              <Menu className="h-6 w-6" />
+              <Menu size={15} />
             </Button>
           </div>
         </div>

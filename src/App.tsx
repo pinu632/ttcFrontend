@@ -26,6 +26,7 @@ import CreateBlogMetaPage from "./Pages/Admin/Pages/BlogManagements/addBlog";
 import AdminDashboard from "./Pages/Admin/Pages/general";
 import TeamPage from "./Pages/Members/Members";
 import MyProfile from "./Pages/MyProfile/myprofile";
+import RegistrationAttendanceManager from "./Pages/Admin/Pages/EventManagement/manageRegistration";
 
 function App() {
 
@@ -69,6 +70,8 @@ function App() {
             <Route path="/admin/gallery" element={<GalleryInfinitePage/>} />
             <Route path="/admin/blogs" element={<BlogManagement/>} />
             <Route path="/admin/blogs/create" element={<CreateBlogMetaPage/>} />
+            
+            <Route path="manage-registrations" element={<RegistrationAttendanceManager/>} />
             
 
           </Route>

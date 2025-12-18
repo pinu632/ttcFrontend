@@ -3,7 +3,7 @@
 import { GradientLetters } from "@/components/GradientLetter";
 import { Button } from "@/components/ui/button";
 import { Redirect } from "@/Utils/RedirectionFunc";
-import {  Compass, Play } from "lucide-react";
+import { Compass, Play } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -46,10 +46,10 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap justify-center gap-4 z-10">
             <Button
               size="lg"
-              onClick={()=>Redirect('/events')}
+              onClick={() => Redirect('/events')}
               className="px-8 h-12 cursor-pointer rounded-xl shadow-lg dark:bg-white dark:text-black font-semibold transition-all"
             >
-            Explore Events <Compass className="ml-2 h-4 w-4" />
+              Explore Events <Compass className="ml-2 h-4 w-4" />
             </Button>
 
             <Button
@@ -78,7 +78,8 @@ export default function Hero() {
 
           <div className="text-center">
             <h3 className="text-4xl font-bold text-primary">500+</h3>
-            <p className="text-muted-foreground mt-1">Community Discussions</p>
+            <p className="text-muted-foreground mt-1">Participants Engaged
+            </p>
           </div>
         </div>
       </div>

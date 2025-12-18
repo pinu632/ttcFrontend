@@ -8,6 +8,7 @@ import { Calendar, Clock, MapPin, ArrowRight, BookOpen, Layers } from "lucide-re
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ export default function EventsSection() {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const naviagate = useNavigate()
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -52,7 +54,7 @@ export default function EventsSection() {
     let ctx = gsap.context(() => {
       const cards = sectionRef.current?.querySelectorAll(".event-card");
       //@ts-ignore
-      gsap.fromTo(cards, 
+      gsap.fromTo(cards,
         { opacity: 0, y: 30, scale: 0.95 },
         {
           opacity: 1,
@@ -85,7 +87,7 @@ export default function EventsSection() {
   return (
     <section ref={sectionRef} className="w-full py-24 bg-background">
       <div className="container max-w-6xl mx-auto px-4">
-        
+
         {/* Header */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
@@ -101,21 +103,20 @@ export default function EventsSection() {
         </div>
 
         {/* Grid Logic for 1, 2, or 3 items */}
-        <div className={`grid gap-8 justify-center ${
-          events.length === 1 ? "max-w-md mx-auto grid-cols-1" : 
-          events.length === 2 ? "max-w-4xl mx-auto grid-cols-1 md:grid-cols-2" : 
-          "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        }`}>
+        <div className={`grid gap-8 justify-center ${events.length === 1 ? "max-w-md mx-auto grid-cols-1" :
+            events.length === 2 ? "max-w-4xl mx-auto grid-cols-1 md:grid-cols-2" :
+              "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          }`}>
           {loading ? (
             Array.from({ length: 3 }).map((_, i) => <EventSkeleton key={i} />)
           ) : events.length > 0 ? (
             events.map((event) => (
               <div key={event._id} className="event-card group bg-card border border-border/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
-                
+
                 {/* Poster Image */}
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={event.poster_link} 
+                  <img
+                    src={event.poster_link}
                     alt={event.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -130,7 +131,7 @@ export default function EventsSection() {
                   <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
                     {event.name}
                   </h3>
-                  
+
                   <p className="text-sm text-muted-foreground line-clamp-3 mb-6 leading-relaxed">
                     {event.description}
                   </p>
@@ -159,10 +160,12 @@ export default function EventsSection() {
                   </div>
 
                   <div className="pt-6 flex gap-3">
-                    <Button className="flex-1 rounded-xl font-bold shadow-lg shadow-primary/20">
-                      Register Now
-                    </Button>
-                    <Button variant="secondary" className="rounded-xl font-semibold">
+
+                    <Button
+                      onClick={() => {
+                        naviagate(`/event/${event._id}`)
+                      }}
+                      variant="default" className=" font-semibold">
                       Details
                     </Button>
                   </div>

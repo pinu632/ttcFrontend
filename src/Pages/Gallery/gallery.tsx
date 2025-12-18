@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import api from "@/Axios/axiosInstance";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
+
 export default function GalleryPage() {
     const [images, setImages] = useState<any[]>([]);
     const [pageNum, setPageNum] = useState(1);
@@ -23,6 +24,9 @@ export default function GalleryPage() {
             const res = await api.post(`/media/list`, {
                 pageNum,
                 pageSize,
+                filter:{
+                    type:"Event"
+                }
             });
 
             const data = res.data;
